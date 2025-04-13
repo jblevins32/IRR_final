@@ -1,0 +1,3 @@
+[console_scripts]
+read_sign_pubsub = read_sign.read_sign:main
+

@@ -1,0 +1,7 @@
+# Python 3.13.2
+joblib==1.4.2
+matplotlib==3.10.1
+numpy==2.2.4
+opencv_python==4.11.0.86
+opencv_python_headless==4.11.0.86
+scikit_learn==1.6.1

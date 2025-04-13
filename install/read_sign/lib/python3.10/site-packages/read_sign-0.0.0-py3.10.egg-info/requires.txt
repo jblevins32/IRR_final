@@ -1,0 +1,7 @@
+joblib
+numpy
+opencv-python
+rclpy
+scikit-learn
+sensor_msgs
+setuptools
