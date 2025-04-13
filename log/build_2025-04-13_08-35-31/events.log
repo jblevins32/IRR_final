@@ -1,0 +1,173 @@
+[0.000000] (-) TimerEvent: {}
+[0.000362] (-) JobUnselected: {'identifier': 'print_fixed_odometry'}
+[0.000421] (-) JobUnselected: {'identifier': 'read_sign'}
+[0.000558] (control) JobQueued: {'identifier': 'control', 'dependencies': OrderedDict()}
+[0.000600] (control) JobStarted: {'identifier': 'control'}
+[0.014930] (control) JobProgress: {'identifier': 'control', 'progress': 'cmake'}
+[0.015740] (control) JobProgress: {'identifier': 'control', 'progress': 'build'}
+[0.017018] (control) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/jblevins32/IRR_final/build/control', '--', '-j28', '-l28'], 'cwd': '/home/jblevins32/IRR_final/build/control', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('USER', 'jblevins32'), ('FONTCONFIG_PATH', '/etc/fonts'), ('XDG_SESSION_TYPE', 'x11'), ('GIT_ASKPASS', '/snap/code/190/usr/share/code/resources/app/extensions/git/dist/askpass.sh'), ('ISAACSIM_PATH', '/home/jblevins32/.local/share/ov/pkg/isaac-sim-4.0.0'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/home/jblevins32/.mujoco/mujoco210/bin:/usr/lib/x86_64-linux-gnu/gazebo-11/plugins:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/home/jblevins32'), ('CHROME_DESKTOP', 'code.desktop'), ('CONDA_SHLVL', '0'), ('OLDPWD', '/home/jblevins32/IRR_final'), ('TERM_PROGRAM_VERSION', '1.99.2'), ('DESKTOP_SESSION', 'ubuntu'), ('GIO_LAUNCHED_DESKTOP_FILE', '/var/lib/snapd/desktop/applications/code_code.desktop'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('VSCODE_GIT_ASKPASS_MAIN', '/snap/code/190/usr/share/code/resources/app/extensions/git/dist/askpass-main.js'), ('VSCODE_GIT_ASKPASS_NODE', '/snap/code/190/usr/share/code/code'), ('MANAGERPID', '4140'), ('PYDEVD_DISABLE_FILE_VALIDATION', '1'), ('SYSTEMD_EXEC_PID', '4804'), ('BUNDLED_DEBUGPY_PATH', '/home/jblevins32/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/bundled/libs/debugpy'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/800880/bus'), ('COLORTERM', 'truecolor'), ('GIO_LAUNCHED_DESKTOP_FILE_PID', '8427'), ('DEBUGINFOD_URLS', 'https://debuginfod.ubuntu.com'), ('COLCON_PREFIX_PATH', '/home/jblevins32/IRR_final/install'), ('ROS_DISTRO', 'humble'), ('GTK_IM_MODULE', 'ibus'), ('LOGNAME', 'jblevins32'), ('JOURNAL_STREAM', '8:59420'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('XDG_CONFIG_DIRS_VSCODE_SNAP_ORIG', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_SESSION_CLASS', 'user'), ('XDG_DATA_DIRS_VSCODE_SNAP_ORIG', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('USERNAME', 'jblevins32'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/home/jblevins32/.mujoco/mujoco210/bin:/home/jblevins32/anaconda3/condabin:/opt/ros/humble/bin:/home/jblevins32/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/jblevins32/.config/Code/User/globalStorage/github.copilot-chat/debugCommand:/home/jblevins32/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/bundled/scripts/noConfigScripts'), ('SESSION_MANAGER', 'local/MEL06988L.me.gatech.edu:@/tmp/.ICE-unix/4769,unix/MEL06988L.me.gatech.edu:/tmp/.ICE-unix/4769'), ('INVOCATION_ID', '7646ed6ebb6946ae988abd6c9b9e0a1d'), ('XDG_MENU_PREFIX', 'gnome-'), ('BAMF_DESKTOP_FILE_HINT', '/var/lib/snapd/desktop/applications/code_code.desktop'), ('MUJOCO_PATH', '/home/jblevins32/.mujoco/mujoco210'), ('XDG_RUNTIME_DIR', '/run/user/800880'), ('DISPLAY', ':1'), ('VSCODE_DEBUGPY_ADAPTER_ENDPOINTS', '/home/jblevins32/.vscode/extensions/ms-python.debugpy-2025.6.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-8b0560013d603953.txt'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'Unity'), ('gazebo_DIR', '/usr/lib/x86_64-linux-gnu/cmake/gazebo'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/800880/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('VSCODE_GIT_IPC_HANDLE', '/run/user/800880/vscode-git-2621a5069d.sock'), ('TERM_PROGRAM', 'vscode'), ('SSH_AGENT_LAUNCHER', 'gnome-keyring'), ('SSH_AUTH_SOCK', '/run/user/800880/keyring/ssh'), ('ROS_DOMAIN_ID', '41'), ('AMENT_PREFIX_PATH', '/home/jblevins32/IRR_final/install/read_sign:/home/jblevins32/IRR_final/install/print_fixed_odometry:/home/jblevins32/IRR_final/install/control:/opt/ros/humble'), ('CONDA_PYTHON_EXE', '/home/jblevins32/anaconda3/bin/python'), ('ORIGINAL_XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('SHELL', '/bin/bash'), ('KRB5CCNAME', 'FILE:/tmp/krb5cc_800880_khvqEB'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('FONTCONFIG_FILE', '/etc/fonts/fonts.conf'), ('GPG_AGENT_INFO', '/run/user/800880/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('VSCODE_GIT_ASKPASS_EXTRA_ARGS', ''), ('QT_IM_MODULE', 'ibus'), ('PWD', '/home/jblevins32/IRR_final/build/control'), ('TURTLEBOT3_MODEL', 'burger'), ('LC_ALL', 'en_US.UTF-8'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('CONDA_EXE', '/home/jblevins32/anaconda3/bin/conda'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages:/home/jblevins32/IRR_final/install/print_fixed_odometry/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/home/jblevins32/IRR_final/install/control:/home/jblevins32/IRR_final/install/read_sign:/home/jblevins32/IRR_final/install/print_fixed_odometry:/opt/ros/humble')]), 'shell': False}
+[0.098947] (-) TimerEvent: {}
+[0.174304] (control) StdoutLine: {'line': b'\x1b[35m\x1b[1mConsolidate compiler generated dependencies of target get_control\x1b[0m\n'}
+[0.199104] (-) TimerEvent: {}
+[0.225748] (control) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/get_control.dir/src/get_control.cpp.o\x1b[0m\n'}
+[0.299263] (-) TimerEvent: {}
+[0.399793] (-) TimerEvent: {}
+[0.500240] (-) TimerEvent: {}
+[0.600853] (-) TimerEvent: {}
+[0.701487] (-) TimerEvent: {}
+[0.801986] (-) TimerEvent: {}
+[0.902616] (-) TimerEvent: {}
+[1.003227] (-) TimerEvent: {}
+[1.103764] (-) TimerEvent: {}
+[1.204291] (-) TimerEvent: {}
+[1.304743] (-) TimerEvent: {}
+[1.405174] (-) TimerEvent: {}
+[1.505678] (-) TimerEvent: {}
+[1.606138] (-) TimerEvent: {}
+[1.706603] (-) TimerEvent: {}
+[1.807103] (-) TimerEvent: {}
+[1.907603] (-) TimerEvent: {}
+[2.008200] (-) TimerEvent: {}
+[2.108701] (-) TimerEvent: {}
+[2.209287] (-) TimerEvent: {}
+[2.309780] (-) TimerEvent: {}
+[2.410335] (-) TimerEvent: {}
+[2.510890] (-) TimerEvent: {}
+[2.611377] (-) TimerEvent: {}
+[2.712026] (-) TimerEvent: {}
+[2.812597] (-) TimerEvent: {}
+[2.913241] (-) TimerEvent: {}
+[3.013760] (-) TimerEvent: {}
+[3.114418] (-) TimerEvent: {}
+[3.215027] (-) TimerEvent: {}
+[3.315682] (-) TimerEvent: {}
+[3.416294] (-) TimerEvent: {}
+[3.516736] (-) TimerEvent: {}
+[3.617341] (-) TimerEvent: {}
+[3.717871] (-) TimerEvent: {}
+[3.818447] (-) TimerEvent: {}
+[3.919154] (-) TimerEvent: {}
+[4.019680] (-) TimerEvent: {}
+[4.120159] (-) TimerEvent: {}
+[4.220749] (-) TimerEvent: {}
+[4.321370] (-) TimerEvent: {}
+[4.421875] (-) TimerEvent: {}
+[4.522478] (-) TimerEvent: {}
+[4.623234] (-) TimerEvent: {}
+[4.723765] (-) TimerEvent: {}
+[4.824257] (-) TimerEvent: {}
+[4.924813] (-) TimerEvent: {}
+[5.025365] (-) TimerEvent: {}
+[5.125812] (-) TimerEvent: {}
+[5.226332] (-) TimerEvent: {}
+[5.326842] (-) TimerEvent: {}
+[5.427330] (-) TimerEvent: {}
+[5.527780] (-) TimerEvent: {}
+[5.628397] (-) TimerEvent: {}
+[5.728924] (-) TimerEvent: {}
+[5.815278] (control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kvoid control::sign_callback(const Int32&)\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[5.815913] (control) StderrLine: {'line': b'\x1b[01m\x1b[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:97:23:\x1b[m\x1b[K \x1b[01;31m\x1b[Kerror: \x1b[m\x1b[Kcannot convert \xe2\x80\x98\x1b[01m\x1b[Kconst Int32\x1b[m\x1b[K\xe2\x80\x99 {aka \xe2\x80\x98\x1b[01m\x1b[Kconst std_msgs::msg::Int32_<std::allocator<void> >\x1b[m\x1b[K\xe2\x80\x99} to \xe2\x80\x98\x1b[01m\x1b[Kint\x1b[m\x1b[K\xe2\x80\x99 in assignment\n'}
+[5.816164] (control) StderrLine: {'line': b'   97 |         recent_sign = \x1b[01;31m\x1b[Kdetected_sign\x1b[m\x1b[K;\n'}
+[5.816371] (control) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K^~~~~~~~~~~~~\x1b[m\x1b[K\n'}
+[5.816561] (control) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[K|\x1b[m\x1b[K\n'}
+[5.816752] (control) StderrLine: {'line': b'      |                       \x1b[01;31m\x1b[Kconst Int32 {aka const std_msgs::msg::Int32_<std::allocator<void> >}\x1b[m\x1b[K\n'}
+[5.829133] (-) TimerEvent: {}
+[5.929635] (-) TimerEvent: {}
+[6.030190] (-) TimerEvent: {}
+[6.130734] (-) TimerEvent: {}
+[6.231158] (-) TimerEvent: {}
+[6.331735] (-) TimerEvent: {}
+[6.432351] (-) TimerEvent: {}
+[6.532844] (-) TimerEvent: {}
+[6.633427] (-) TimerEvent: {}
+[6.734044] (-) TimerEvent: {}
+[6.834655] (-) TimerEvent: {}
+[6.935529] (-) TimerEvent: {}
+[7.036141] (-) TimerEvent: {}
+[7.136748] (-) TimerEvent: {}
+[7.237255] (-) TimerEvent: {}
+[7.337816] (-) TimerEvent: {}
+[7.438467] (-) TimerEvent: {}
+[7.538954] (-) TimerEvent: {}
+[7.639409] (-) TimerEvent: {}
+[7.739945] (-) TimerEvent: {}
+[7.840431] (-) TimerEvent: {}
+[7.940869] (-) TimerEvent: {}
+[8.041487] (-) TimerEvent: {}
+[8.142022] (-) TimerEvent: {}
+[8.242650] (-) TimerEvent: {}
+[8.343181] (-) TimerEvent: {}
+[8.443770] (-) TimerEvent: {}
+[8.544369] (-) TimerEvent: {}
+[8.644898] (-) TimerEvent: {}
+[8.745457] (-) TimerEvent: {}
+[8.846096] (-) TimerEvent: {}
+[8.946580] (-) TimerEvent: {}
+[9.047097] (-) TimerEvent: {}
+[9.147584] (-) TimerEvent: {}
+[9.248134] (-) TimerEvent: {}
+[9.348604] (-) TimerEvent: {}
+[9.449089] (-) TimerEvent: {}
+[9.549656] (-) TimerEvent: {}
+[9.650118] (-) TimerEvent: {}
+[9.750536] (-) TimerEvent: {}
+[9.851065] (-) TimerEvent: {}
+[9.951717] (-) TimerEvent: {}
+[10.052265] (-) TimerEvent: {}
+[10.152767] (-) TimerEvent: {}
+[10.253351] (-) TimerEvent: {}
+[10.353921] (-) TimerEvent: {}
+[10.454413] (-) TimerEvent: {}
+[10.554939] (-) TimerEvent: {}
+[10.655516] (-) TimerEvent: {}
+[10.756021] (-) TimerEvent: {}
+[10.856522] (-) TimerEvent: {}
+[10.957139] (-) TimerEvent: {}
+[11.057637] (-) TimerEvent: {}
+[11.158046] (-) TimerEvent: {}
+[11.258645] (-) TimerEvent: {}
+[11.359231] (-) TimerEvent: {}
+[11.459680] (-) TimerEvent: {}
+[11.560202] (-) TimerEvent: {}
+[11.660831] (-) TimerEvent: {}
+[11.761403] (-) TimerEvent: {}
+[11.861873] (-) TimerEvent: {}
+[11.962493] (-) TimerEvent: {}
+[12.063198] (-) TimerEvent: {}
+[12.163743] (-) TimerEvent: {}
+[12.264281] (-) TimerEvent: {}
+[12.364854] (-) TimerEvent: {}
+[12.465481] (-) TimerEvent: {}
+[12.565943] (-) TimerEvent: {}
+[12.666550] (-) TimerEvent: {}
+[12.767130] (-) TimerEvent: {}
+[12.867773] (-) TimerEvent: {}
+[12.968284] (-) TimerEvent: {}
+[13.068846] (-) TimerEvent: {}
+[13.169388] (-) TimerEvent: {}
+[13.269888] (-) TimerEvent: {}
+[13.370411] (-) TimerEvent: {}
+[13.470919] (-) TimerEvent: {}
+[13.571433] (-) TimerEvent: {}
+[13.671961] (-) TimerEvent: {}
+[13.772586] (-) TimerEvent: {}
+[13.873381] (-) TimerEvent: {}
+[13.973990] (-) TimerEvent: {}
+[14.074545] (-) TimerEvent: {}
+[14.175149] (-) TimerEvent: {}
+[14.275719] (-) TimerEvent: {}
+[14.376316] (-) TimerEvent: {}
+[14.477026] (-) TimerEvent: {}
+[14.577980] (-) TimerEvent: {}
+[14.678541] (-) TimerEvent: {}
+[14.779125] (-) TimerEvent: {}
+[14.879832] (-) TimerEvent: {}
+[14.980318] (-) TimerEvent: {}
+[15.081525] (-) TimerEvent: {}
+[15.116023] (control) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/get_control.dir/build.make:76: CMakeFiles/get_control.dir/src/get_control.cpp.o] Error 1\n'}
+[15.121987] (control) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/get_control.dir/all] Error 2\n'}
+[15.122357] (control) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[15.171687] (control) CommandEnded: {'returncode': 2}
+[15.184604] (-) TimerEvent: {}
+[15.250234] (control) JobEnded: {'identifier': 'control', 'rc': 2}
+[15.261710] (-) EventReactorShutdown: {}

@@ -31,7 +31,11 @@ class ReadSign(Node):
 
         # Convert compressed image to numpy array
         img = np.frombuffer(img.data, np.uint8)
-        # frame = cv2.imdecode(np_arr, cv2.IMREAD_COLOR)
+        img = cv2.imdecode(img, cv2.IMREAD_COLOR)
+
+        # Show the image
+        cv2.imshow('Original',img)
+        key = cv2.waitKey(1) & 0xFF
 
         # Run img through model
         img,_ = preprocess(img)
@@ -43,7 +47,7 @@ class ReadSign(Node):
         msg.data = prediction
 
         # Publish classification
-        print(f'publishing prediction')
+        print(f'publishing prediction {msg.data}')
         self.publisher_.publish(msg)
 
 def main(args=None):

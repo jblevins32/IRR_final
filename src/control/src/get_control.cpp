@@ -2,6 +2,7 @@
 #include "geometry_msgs/msg/twist.hpp"
 #include "nav_msgs/msg/odometry.hpp"
 #include "sensor_msgs/msg/laser_scan.hpp"
+#include "std_msgs/msg/int32.hpp"
 #include "tf2/LinearMath/Quaternion.h"
 #include "tf2/LinearMath/Matrix3x3.h"
 #include "tf2_geometry_msgs/tf2_geometry_msgs.hpp"
@@ -10,7 +11,7 @@
 #include <chrono>
 #include <thread>
 #include <algorithm>
-#include <math>
+#include <cmath>
 
 using std::placeholders::_1;
 using namespace std::chrono_literals;
@@ -31,7 +32,7 @@ public:
       subscription_scan = this->create_subscription<sensor_msgs::msg::LaserScan>(
           "/scan", qos, std::bind(&control::scan_callback, this, _1)); // _1 means the function will allow one argument
 
-      subscription_sign = this->create_subscription<int>(
+      subscription_sign = this->create_subscription<std_msgs::msg::Int32>(
         "/detected_sign", qos, std::bind(&control::sign_callback, this, _1));
 
       publisher_cmdvel = this->create_publisher<geometry_msgs::msg::Twist>("/cmd_vel", 10);
@@ -44,7 +45,7 @@ private:
     // Define sensor messages
     sensor_msgs::msg::LaserScan recent_scan;
     nav_msgs::msg::Odometry recent_odom;
-    int recent_sign;
+    std_msgs::msg::Int32 recent_sign;
     bool odom_received = false;
     bool scan_received = false;
     bool sign_received = false;
@@ -89,7 +90,7 @@ private:
     }
 
     // callback to capture sign detections
-    void sign_callback(const int & detected_sign)
+    void sign_callback(const std_msgs::msg::Int32 & detected_sign)
     {
         // RCLCPP_INFO(this->get_logger(),  "Received Sign");
 
@@ -99,42 +100,39 @@ private:
 
     void timer_callback()
       {
-        // Ensure we have data from sensors
-        if (scan_received && odom_received && sign_received)
+        RCLCPP_INFO(this->get_logger(), "Received all");
+
+        // Get current pose from odom
+        auto current_dist_x = recent_odom.pose.pose.position.x;
+
+        // Get current scan data in front of robot from odom
+        auto current_scan = recent_scan.ranges;
+        std::vector<float> current_scan_fov;
+
+        // isolate the front 120 degrees of lidar scan
+        // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin() + 300, current_scan.end());
+        // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin(),current_scan.begin() + 60); 
+        // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin() + 190, current_scan.end());
+        // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin(),current_scan.begin() + 29); 
+
+        // isolate the front of lidar scan
+        current_scan_fov.insert(current_scan_fov.end(), current_scan.begin() + 355, current_scan.end());
+        current_scan_fov.insert(current_scan_fov.end(), current_scan.begin(),current_scan.begin() + 5); 
+
+        // Get min distance object in front of robot
+        float scan_min = *std::min_element(current_scan_fov.begin(), current_scan_fov.end());
+
+        // If an obstacle is less than some dist from the front of the robot,
+        if (scan_min <= obstacle_dist)
         {
-          // Get current pose from odom
-          auto current_dist_x = recent_odom.pose.pose.position.x;
-          auto current_dist_y = recent_odom.pose.pose.position.y;
-
-          // Get current scan data in front of robot from odom
-          auto current_scan = recent_scan.ranges;
-          std::vector<float> current_scan_fov;
-
-          // isolate the front 120 degrees of lidar scan
-          // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin() + 300, current_scan.end());
-          // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin(),current_scan.begin() + 60); 
-          // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin() + 190, current_scan.end());
-          // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin(),current_scan.begin() + 29); 
-
-          // isolate the front of lidar scan
-          current_scan_fov.insert(current_scan_fov.end(), current_scan.begin() + 355, current_scan.end());
-          current_scan_fov.insert(current_scan_fov.end(), current_scan.begin(),current_scan.begin() + 5); 
-
-          // Get min distance object in front of robot
-          float scan_min = *std::min_element(current_scan_fov.begin(), current_scan_fov.end());
-
-          // If an obstacle is less than some dist from the front of the robot,
-          if (scan_min <= obstacle_dist)
-          {
-            // Read sign
-            DoSignAction();
-          }
-          
-          // No obstacle ahead, translate 1 grid
-          else
-          {
-            translate(recent_odom + grid_dist)
-          }
+          // Read sign
+          DoSignAction();
+        }
+        
+        // No obstacle ahead, translate 1 grid
+        else
+        {
+          translate(current_dist_x + grid_dist);
         }
       }
 
@@ -142,34 +140,34 @@ private:
     void DoSignAction()
     {
       // None, rotate 90 to look for another sign
-      if (recent_sign == 0)
+      if (recent_sign.data == 0)
       {
-        rotate(current_yaw + math::pi/2);
+        rotate(current_yaw + M_PI/2);
       } 
 
       // left arrow
-      else if (recent_sign == 1)
+      else if (recent_sign.data == 1)
       {
-        rotate(current_yaw + math::pi/2);
+        rotate(current_yaw + M_PI/2);
       }
 
       // right arrow
-      else if (recent_sign == 2)
+      else if (recent_sign.data == 2)
       {
-        rotate(current_yaw - math::pi/2);
+        rotate(current_yaw - M_PI/2);
       }
 
       // Stop and turn around
-      else if (recent_sign == 3 | recent_sign == 4)
+      else if ((recent_sign.data == 3) | (recent_sign.data == 4))
       {
-        rotate(current_yaw - math::pi);
+        rotate(current_yaw - M_PI);
       }
 
       // Goal
-      else if (recent_sign == 5)
+      else if (recent_sign.data == 5)
       {
         RCLCPP_INFO(this->get_logger(), "Found goal!");
-        stop()
+        stop();
       }
     }
 
@@ -202,7 +200,7 @@ private:
 
       // Stop movement before translation
       twist_msg.angular.z = 0;
-      float dist_error = recent_odom - desired_x
+      float dist_error = recent_odom.pose.pose.position.x - desired_x;
 
       // translate in x until we meet the threshold
       while (dist_error > error_threshold)
@@ -257,7 +255,7 @@ private:
     rclcpp::Subscription<nav_msgs::msg::Odometry>::SharedPtr subscription_odom;
     rclcpp::Publisher<geometry_msgs::msg::Twist>::SharedPtr publisher_cmdvel;
     rclcpp::Subscription<sensor_msgs::msg::LaserScan>::SharedPtr subscription_scan;
-    rclcpp::Subscription<int>::SharedPtr subscription_sign;
+    rclcpp::Subscription<std_msgs::msg::Int32>::SharedPtr subscription_sign;
     rclcpp::TimerBase::SharedPtr timer_;
 };
 

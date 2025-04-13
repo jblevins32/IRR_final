@@ -15,7 +15,7 @@ find_package(tf2_geometry_msgs REQUIRED)
 find_package(tf2 REQUIRED)
 
 add_executable(get_control src/get_control.cpp)
-ament_target_dependencies(get_control rclcpp geometry_msgs nav_msgs sensor_msgs tf2_geometry_msgs tf2)
+ament_target_dependencies(get_control rclcpp geometry_msgs nav_msgs sensor_msgs std_msgs tf2_geometry_msgs tf2)
 
 target_include_directories(get_control PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>

@@ -1,0 +1,270 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/get_control.dir/src/get_control.cpp.o[0m
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:[m[K In member function ‘[01m[Kvoid control::timer_callback()[m[K’:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:138:35:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator+[m[K’ (operand types are ‘[01m[Knav_msgs::msg::Odometry[m[K’ {aka ‘[01m[Knav_msgs::msg::Odometry_<std::allocator<void> >[m[K’} and ‘[01m[Kfloat[m[K’)
+  138 |             translate([32m[Krecent_odom[m[K [01;31m[K+[m[K [34m[Kgrid_dist[m[K)
+      |                       [32m[K~~~~~~~~~~~[m[K [01;31m[K^[m[K [34m[K~~~~~~~~~[m[K
+      |                       [32m[K|[m[K             [34m[K|[m[K
+      |                       [32m[K|[m[K             [34m[Kfloat[m[K
+      |                       [32m[Knav_msgs::msg::Odometry {aka nav_msgs::msg::Odometry_<std::allocator<void> >}[m[K
+In file included from [01m[K/usr/include/c++/11/bits/stl_algobase.h:67[m[K,
+                 from [01m[K/usr/include/c++/11/memory:63[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/stl_iterator.h:585:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Iterator> constexpr std::reverse_iterator<_Iterator> std::operator+(typename std::reverse_iterator<_Iterator>::difference_type, const std::reverse_iterator<_Iterator>&)[m[K’
+  585 |     [01;36m[Koperator[m[K+(typename reverse_iterator<_Iterator>::difference_type __n,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_iterator.h:585:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:138:37:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst std::reverse_iterator<_Iterator>[m[K’ and ‘[01m[Kfloat[m[K’
+  138 |             translate(recent_odom + [01;36m[Kgrid_dist[m[K)
+      |                                     [01;36m[K^~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/bits/stl_algobase.h:67[m[K,
+                 from [01m[K/usr/include/c++/11/memory:63[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/stl_iterator.h:1700:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _Iterator> constexpr std::move_iterator<_IteratorL> std::operator+(typename std::move_iterator<_IteratorL>::difference_type, const std::move_iterator<_IteratorL>&)[m[K’
+ 1700 |     [01;36m[Koperator[m[K+(typename move_iterator<_Iterator>::difference_type __n,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_iterator.h:1700:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:138:37:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst std::move_iterator<_IteratorL>[m[K’ and ‘[01m[Kfloat[m[K’
+  138 |             translate(recent_odom + [01;36m[Kgrid_dist[m[K)
+      |                                     [01;36m[K^~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/string:55[m[K,
+                 from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/11/system_error:41[m[K,
+                 from [01m[K/usr/include/c++/11/mutex:42[m[K,
+                 from [01m[K/usr/include/c++/11/future:38[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/basic_string.h:6095:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)[m[K’
+ 6095 |     [01;36m[Koperator[m[K+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/basic_string.h:6095:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:138:37:[m[K [01;36m[Knote: [m[K  ‘[01m[Knav_msgs::msg::Odometry[m[K’ {aka ‘[01m[Knav_msgs::msg::Odometry_<std::allocator<void> >[m[K’} is not derived from ‘[01m[Kconst std::__cxx11::basic_string<_CharT, _Traits, _Allocator>[m[K’
+  138 |             translate(recent_odom + [01;36m[Kgrid_dist[m[K)
+      |                                     [01;36m[K^~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/string:56[m[K,
+                 from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/11/system_error:41[m[K,
+                 from [01m[K/usr/include/c++/11/mutex:42[m[K,
+                 from [01m[K/usr/include/c++/11/future:38[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/basic_string.tcc:1169:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)[m[K’
+ 1169 |     [01;36m[Koperator[m[K+(const _CharT* __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/basic_string.tcc:1169:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:138:37:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst _CharT*[m[K’ and ‘[01m[Knav_msgs::msg::Odometry_<std::allocator<void> >[m[K’
+  138 |             translate(recent_odom + [01;36m[Kgrid_dist[m[K)
+      |                                     [01;36m[K^~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/string:56[m[K,
+                 from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/11/system_error:41[m[K,
+                 from [01m[K/usr/include/c++/11/mutex:42[m[K,
+                 from [01m[K/usr/include/c++/11/future:38[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/basic_string.tcc:1189:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(_CharT, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)[m[K’
+ 1189 |     [01;36m[Koperator[m[K+(_CharT __lhs, const basic_string<_CharT, _Traits, _Alloc>& __rhs)
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/basic_string.tcc:1189:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:138:37:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst std::__cxx11::basic_string<_CharT, _Traits, _Allocator>[m[K’ and ‘[01m[Kfloat[m[K’
+  138 |             translate(recent_odom + [01;36m[Kgrid_dist[m[K)
+      |                                     [01;36m[K^~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/string:55[m[K,
+                 from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/11/system_error:41[m[K,
+                 from [01m[K/usr/include/c++/11/mutex:42[m[K,
+                 from [01m[K/usr/include/c++/11/future:38[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/basic_string.h:6132:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, const _CharT*)[m[K’
+ 6132 |     [01;36m[Koperator[m[K+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/basic_string.h:6132:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:138:37:[m[K [01;36m[Knote: [m[K  ‘[01m[Knav_msgs::msg::Odometry[m[K’ {aka ‘[01m[Knav_msgs::msg::Odometry_<std::allocator<void> >[m[K’} is not derived from ‘[01m[Kconst std::__cxx11::basic_string<_CharT, _Traits, _Allocator>[m[K’
+  138 |             translate(recent_odom + [01;36m[Kgrid_dist[m[K)
+      |                                     [01;36m[K^~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/string:55[m[K,
+                 from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/11/system_error:41[m[K,
+                 from [01m[K/usr/include/c++/11/mutex:42[m[K,
+                 from [01m[K/usr/include/c++/11/future:38[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/basic_string.h:6148:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, _CharT)[m[K’
+ 6148 |     [01;36m[Koperator[m[K+(const basic_string<_CharT, _Traits, _Alloc>& __lhs, _CharT __rhs)
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/basic_string.h:6148:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:138:37:[m[K [01;36m[Knote: [m[K  ‘[01m[Knav_msgs::msg::Odometry[m[K’ {aka ‘[01m[Knav_msgs::msg::Odometry_<std::allocator<void> >[m[K’} is not derived from ‘[01m[Kconst std::__cxx11::basic_string<_CharT, _Traits, _Allocator>[m[K’
+  138 |             translate(recent_odom + [01;36m[Kgrid_dist[m[K)
+      |                                     [01;36m[K^~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/string:55[m[K,
+                 from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/11/system_error:41[m[K,
+                 from [01m[K/usr/include/c++/11/mutex:42[m[K,
+                 from [01m[K/usr/include/c++/11/future:38[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/basic_string.h:6160:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)[m[K’
+ 6160 |     [01;36m[Koperator[m[K+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/basic_string.h:6160:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:138:37:[m[K [01;36m[Knote: [m[K  ‘[01m[Knav_msgs::msg::Odometry[m[K’ {aka ‘[01m[Knav_msgs::msg::Odometry_<std::allocator<void> >[m[K’} is not derived from ‘[01m[Kstd::__cxx11::basic_string<_CharT, _Traits, _Allocator>[m[K’
+  138 |             translate(recent_odom + [01;36m[Kgrid_dist[m[K)
+      |                                     [01;36m[K^~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/string:55[m[K,
+                 from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/11/system_error:41[m[K,
+                 from [01m[K/usr/include/c++/11/mutex:42[m[K,
+                 from [01m[K/usr/include/c++/11/future:38[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/basic_string.h:6166:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&)[m[K’
+ 6166 |     [01;36m[Koperator[m[K+(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/basic_string.h:6166:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:138:37:[m[K [01;36m[Knote: [m[K  ‘[01m[Knav_msgs::msg::Odometry[m[K’ {aka ‘[01m[Knav_msgs::msg::Odometry_<std::allocator<void> >[m[K’} is not derived from ‘[01m[Kconst std::__cxx11::basic_string<_CharT, _Traits, _Allocator>[m[K’
+  138 |             translate(recent_odom + [01;36m[Kgrid_dist[m[K)
+      |                                     [01;36m[K^~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/string:55[m[K,
+                 from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/11/system_error:41[m[K,
+                 from [01m[K/usr/include/c++/11/mutex:42[m[K,
+                 from [01m[K/usr/include/c++/11/future:38[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/basic_string.h:6172:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&, std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&)[m[K’
+ 6172 |     [01;36m[Koperator[m[K+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/basic_string.h:6172:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:138:37:[m[K [01;36m[Knote: [m[K  ‘[01m[Knav_msgs::msg::Odometry[m[K’ {aka ‘[01m[Knav_msgs::msg::Odometry_<std::allocator<void> >[m[K’} is not derived from ‘[01m[Kstd::__cxx11::basic_string<_CharT, _Traits, _Allocator>[m[K’
+  138 |             translate(recent_odom + [01;36m[Kgrid_dist[m[K)
+      |                                     [01;36m[K^~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/string:55[m[K,
+                 from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/11/system_error:41[m[K,
+                 from [01m[K/usr/include/c++/11/mutex:42[m[K,
+                 from [01m[K/usr/include/c++/11/future:38[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/basic_string.h:6194:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(const _CharT*, std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&)[m[K’
+ 6194 |     [01;36m[Koperator[m[K+(const _CharT* __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/basic_string.h:6194:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:138:37:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kconst _CharT*[m[K’ and ‘[01m[Knav_msgs::msg::Odometry_<std::allocator<void> >[m[K’
+  138 |             translate(recent_odom + [01;36m[Kgrid_dist[m[K)
+      |                                     [01;36m[K^~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/string:55[m[K,
+                 from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/11/system_error:41[m[K,
+                 from [01m[K/usr/include/c++/11/mutex:42[m[K,
+                 from [01m[K/usr/include/c++/11/future:38[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/basic_string.h:6200:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(_CharT, std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&)[m[K’
+ 6200 |     [01;36m[Koperator[m[K+(_CharT __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/basic_string.h:6200:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:138:37:[m[K [01;36m[Knote: [m[K  mismatched types ‘[01m[Kstd::__cxx11::basic_string<_CharT, _Traits, _Allocator>[m[K’ and ‘[01m[Kfloat[m[K’
+  138 |             translate(recent_odom + [01;36m[Kgrid_dist[m[K)
+      |                                     [01;36m[K^~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/string:55[m[K,
+                 from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/11/system_error:41[m[K,
+                 from [01m[K/usr/include/c++/11/mutex:42[m[K,
+                 from [01m[K/usr/include/c++/11/future:38[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/basic_string.h:6206:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&, const _CharT*)[m[K’
+ 6206 |     [01;36m[Koperator[m[K+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/basic_string.h:6206:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:138:37:[m[K [01;36m[Knote: [m[K  ‘[01m[Knav_msgs::msg::Odometry[m[K’ {aka ‘[01m[Knav_msgs::msg::Odometry_<std::allocator<void> >[m[K’} is not derived from ‘[01m[Kstd::__cxx11::basic_string<_CharT, _Traits, _Allocator>[m[K’
+  138 |             translate(recent_odom + [01;36m[Kgrid_dist[m[K)
+      |                                     [01;36m[K^~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/string:55[m[K,
+                 from [01m[K/usr/include/c++/11/stdexcept:39[m[K,
+                 from [01m[K/usr/include/c++/11/system_error:41[m[K,
+                 from [01m[K/usr/include/c++/11/mutex:42[m[K,
+                 from [01m[K/usr/include/c++/11/future:38[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:18[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+                 from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/basic_string.h:6212:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _CharT, class _Traits, class _Alloc> std::__cxx11::basic_string<_CharT, _Traits, _Allocator> std::operator+(std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&&, _CharT)[m[K’
+ 6212 |     [01;36m[Koperator[m[K+(basic_string<_CharT, _Traits, _Alloc>&& __lhs,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/basic_string.h:6212:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:138:37:[m[K [01;36m[Knote: [m[K  ‘[01m[Knav_msgs::msg::Odometry[m[K’ {aka ‘[01m[Knav_msgs::msg::Odometry_<std::allocator<void> >[m[K’} is not derived from ‘[01m[Kstd::__cxx11::basic_string<_CharT, _Traits, _Allocator>[m[K’
+  138 |             translate(recent_odom + [01;36m[Kgrid_dist[m[K)
+      |                                     [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:108:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kcurrent_dist_x[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  108 |           auto [01;35m[Kcurrent_dist_x[m[K = recent_odom.pose.pose.position.x;
+      |                [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:109:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kcurrent_dist_y[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  109 |           auto [01;35m[Kcurrent_dist_y[m[K = recent_odom.pose.pose.position.y;
+      |                [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:[m[K In member function ‘[01m[Kvoid control::DoSignAction()[m[K’:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:149:30:[m[K [01;31m[Kerror: [m[K‘[01m[Kmath[m[K’ has not been declared
+  149 |         rotate(current_yaw + [01;31m[Kmath[m[K::pi/2);
+      |                              [01;31m[K^~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:155:30:[m[K [01;31m[Kerror: [m[K‘[01m[Kmath[m[K’ has not been declared
+  155 |         rotate(current_yaw + [01;31m[Kmath[m[K::pi/2);
+      |                              [01;31m[K^~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:161:30:[m[K [01;31m[Kerror: [m[K‘[01m[Kmath[m[K’ has not been declared
+  161 |         rotate(current_yaw - [01;31m[Kmath[m[K::pi/2);
+      |                              [01;31m[K^~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:165:28:[m[K [01;35m[Kwarning: [m[Ksuggest parentheses around comparison in operand of ‘[01m[K|[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wparentheses-Wparentheses]8;;[m[K]
+  165 |       else if ([01;35m[Krecent_sign == 3[m[K | recent_sign == 4)
+      |                [01;35m[K~~~~~~~~~~~~^~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:167:30:[m[K [01;31m[Kerror: [m[K‘[01m[Kmath[m[K’ has not been declared
+  167 |         rotate(current_yaw - [01;31m[Kmath[m[K::pi);
+      |                              [01;31m[K^~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:175:7:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[K}[m[K’ token
+  175 |       [01;31m[K}[m[K
+      |       [01;31m[K^[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:[m[K In member function ‘[01m[Kvoid control::translate(double)[m[K’:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:207:38:[m[K [01;31m[Kerror: [m[Kno match for ‘[01m[Koperator-[m[K’ (operand types are ‘[01m[Knav_msgs::msg::Odometry[m[K’ {aka ‘[01m[Knav_msgs::msg::Odometry_<std::allocator<void> >[m[K’} and ‘[01m[Kdouble[m[K’)
+  207 |       float dist_error = [32m[Krecent_odom[m[K [01;31m[K-[m[K [34m[Kdesired_x[m[K
+      |                          [32m[K~~~~~~~~~~~[m[K [01;31m[K^[m[K [34m[K~~~~~~~~~[m[K
+      |                          [32m[K|[m[K             [34m[K|[m[K
+      |                          [32m[K|[m[K             [34m[Kdouble[m[K
+      |                          [32m[Knav_msgs::msg::Odometry {aka nav_msgs::msg::Odometry_<std::allocator<void> >}[m[K
+In file included from [01m[K/usr/include/c++/11/bits/stl_algobase.h:67[m[K,
+                 from [01m[K/usr/include/c++/11/memory:63[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/stl_iterator.h:577:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _IteratorL, class _IteratorR> constexpr decltype ((__y.base() - __x.base())) std::operator-(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)[m[K’
+  577 |     [01;36m[Koperator[m[K-(const reverse_iterator<_IteratorL>& __x,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_iterator.h:577:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:207:40:[m[K [01;36m[Knote: [m[K  ‘[01m[Knav_msgs::msg::Odometry[m[K’ {aka ‘[01m[Knav_msgs::msg::Odometry_<std::allocator<void> >[m[K’} is not derived from ‘[01m[Kconst std::reverse_iterator<_Iterator>[m[K’
+  207 |       float dist_error = recent_odom - [01;36m[Kdesired_x[m[K
+      |                                        [01;36m[K^~~~~~~~~[m[K
+In file included from [01m[K/usr/include/c++/11/bits/stl_algobase.h:67[m[K,
+                 from [01m[K/usr/include/c++/11/memory:63[m[K,
+                 from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:153[m[K,
+                 from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:1[m[K:
+[01m[K/usr/include/c++/11/bits/stl_iterator.h:1693:5:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class _IteratorL, class _IteratorR> constexpr decltype ((__x.base() - __y.base())) std::operator-(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)[m[K’
+ 1693 |     [01;36m[Koperator[m[K-(const move_iterator<_IteratorL>& __x,
+      |     [01;36m[K^~~~~~~~[m[K
+[01m[K/usr/include/c++/11/bits/stl_iterator.h:1693:5:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:207:40:[m[K [01;36m[Knote: [m[K  ‘[01m[Knav_msgs::msg::Odometry[m[K’ {aka ‘[01m[Knav_msgs::msg::Odometry_<std::allocator<void> >[m[K’} is not derived from ‘[01m[Kconst std::move_iterator<_IteratorL>[m[K’
+  207 |       float dist_error = recent_odom - [01;36m[Kdesired_x[m[K
+      |                                        [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:207:13:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kdist_error[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  207 |       float [01;35m[Kdist_error[m[K = recent_odom - desired_x
+      |             [01;35m[K^~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/get_control.dir/build.make:76: CMakeFiles/get_control.dir/src/get_control.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/get_control.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
