@@ -1,11 +1,11 @@
 ## IRR Lab 6
 
-This code generates a KNN, random forest, or SVM classification model using Scikit-learn for traffic sign image classficiation using preprocessing techniques with cv2.
+This program navigates a maze using a KNN classifier to determine direction.
 
 ### How to run
-- Create and activate conda environment `conda create env -n <name> -r requirements.txt & conda activate <name>`
-- Run test on my model `python3 model_grader.py --data_path ./data/2024F_Gimgs --model_path ./saved_model_best.pkl`
-    - Replace the data path as needed
+- Run turtlebot bringup on robot `ros2 launch turtlebot3_bringup camera_robot.launch.py`
+- Zero the odometry `ros2 run print_fixed_odometry zero_odom`
+- Run control logic `ros2 run control get_control`
 
 ### File Structure
 - `data`: sign image data folder

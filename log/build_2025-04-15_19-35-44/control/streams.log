@@ -1,0 +1,50 @@
+[0.017s] Invoking command in '/home/jblevins32/IRR_final/build/control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jblevins32/IRR_final/install/read_sign:/home/jblevins32/IRR_final/install/print_fixed_odometry:/opt/ros/humble DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jblevins32/IRR_final/build/control -- -j28 -l28
+[0.281s] [35m[1mConsolidate compiler generated dependencies of target get_control[0m
+[0.282s] [ 50%] [32mBuilding CXX object CMakeFiles/get_control.dir/src/get_control.cpp.o[0m
+[2.256s] In file included from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/logging.hpp:24[m[K,
+[2.256s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/client.hpp:40[m[K,
+[2.256s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/callback_group.hpp:24[m[K,
+[2.256s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/any_executable.hpp:20[m[K,
+[2.256s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategy.hpp:25[m[K,
+[2.256s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/memory_strategies.hpp:18[m[K,
+[2.256s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor_options.hpp:20[m[K,
+[2.256s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executor.hpp:37[m[K,
+[2.256s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors/multi_threaded_executor.hpp:25[m[K,
+[2.257s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/executors.hpp:21[m[K,
+[2.257s]                  from [01m[K/opt/ros/humble/include/rclcpp/rclcpp/rclcpp.hpp:155[m[K,
+[2.257s]                  from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:1[m[K:
+[2.257s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:[m[K In member function ‘[01m[Kvoid control::timer_callback()[m[K’:
+[2.257s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:132:43:[m[K [01;35m[Kwarning: [m[Kformat ‘[01m[K%f[m[K’ expects argument of type ‘[01m[Kdouble[m[K’, but argument 5 has type ‘[01m[Kstd::vector<float>::size_type[m[K’ {aka ‘[01m[Klong unsigned int[m[K’} [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wformat=-Wformat=]8;;[m[K]
+[2.257s]   132 |           RCLCPP_INFO(this->get_logger(), [01;35m[K"Scan size %f"[m[K, [32m[Kcurrent_scan.size()[m[K);
+[2.257s]       |                                           [01;35m[K^~~~~~~~~~~~~~[m[K  [32m[K~~~~~~~~~~~~~~~~~~~[m[K
+[2.257s]       |                                                                            [32m[K|[m[K
+[2.257s]       |                                                                            [32m[Kstd::vector<float>::size_type {aka long unsigned int}[m[K
+[2.257s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:132:55:[m[K [01;36m[Knote: [m[Kformat string is defined here
+[2.257s]   132 |           RCLCPP_INFO(this->get_logger(), "Scan size [01;36m[K%f[m[K", current_scan.size());
+[2.257s]       |                                                      [01;36m[K~^[m[K
+[2.257s]       |                                                       [01;36m[K|[m[K
+[2.257s]       |                                                       [01;36m[Kdouble[m[K
+[2.257s]       |                                                      [32m[K%ld[m[K
+[11.550s] [100%] [32m[1mLinking CXX executable get_control[0m
+[12.205s] [100%] Built target get_control
+[12.220s] Invoked command in '/home/jblevins32/IRR_final/build/control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jblevins32/IRR_final/install/read_sign:/home/jblevins32/IRR_final/install/print_fixed_odometry:/opt/ros/humble DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jblevins32/IRR_final/build/control -- -j28 -l28
+[12.230s] Invoking command in '/home/jblevins32/IRR_final/build/control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jblevins32/IRR_final/install/read_sign:/home/jblevins32/IRR_final/install/print_fixed_odometry:/opt/ros/humble DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/jblevins32/IRR_final/build/control
+[12.236s] -- Install configuration: "Debug"
+[12.237s] -- Execute custom install script
+[12.237s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/lib/control/get_control
+[12.237s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/ament_index/resource_index/package_run_dependencies/control
+[12.237s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/ament_index/resource_index/parent_prefix_path/control
+[12.237s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/environment/ament_prefix_path.sh
+[12.237s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/environment/ament_prefix_path.dsv
+[12.237s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/environment/path.sh
+[12.237s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/environment/path.dsv
+[12.237s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/local_setup.bash
+[12.238s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/local_setup.sh
+[12.238s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/local_setup.zsh
+[12.238s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/local_setup.dsv
+[12.238s] -- Symlinking: /home/jblevins32/IRR_final/install/control/share/control/package.dsv
+[12.249s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/ament_index/resource_index/packages/control
+[12.249s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/cmake/controlConfig.cmake
+[12.249s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/cmake/controlConfig-version.cmake
+[12.250s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/package.xml
+[12.251s] Invoked command in '/home/jblevins32/IRR_final/build/control' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jblevins32/IRR_final/install/read_sign:/home/jblevins32/IRR_final/install/print_fixed_odometry:/opt/ros/humble DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/jblevins32/IRR_final/build/control

@@ -18,7 +18,7 @@ class ReadSign(Node):
         # Create the subscription
         self.subscription = self.create_subscription(
             CompressedImage, 
-            '/simulated_camera/image_raw/compressed', 
+            '/image_raw/compressed', # '/simulated_camera/image_raw/compressed' for sim
             self._image_callback, 
             custom_qos_profile
         )
