@@ -1,0 +1,19 @@
+[1.040s] Invoking command in '/home/jblevins32/IRR_final/build/read_sign': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/jblevins32/IRR_final/build/read_sign/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/jblevins32/IRR_final/build/read_sign/build --no-deps symlink_data --force
+[1.369s] running develop
+[1.600s] running egg_info
+[1.600s] writing read_sign.egg-info/PKG-INFO
+[1.600s] writing dependency_links to read_sign.egg-info/dependency_links.txt
+[1.600s] writing entry points to read_sign.egg-info/entry_points.txt
+[1.600s] writing requirements to read_sign.egg-info/requires.txt
+[1.600s] writing top-level names to read_sign.egg-info/top_level.txt
+[1.602s] reading manifest file 'read_sign.egg-info/SOURCES.txt'
+[1.602s] writing manifest file 'read_sign.egg-info/SOURCES.txt'
+[1.604s] running build_ext
+[1.605s] Creating /home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages/read-sign.egg-link (link to .)
+[1.605s] Installing read_sign_pubsub script to /home/jblevins32/IRR_final/install/read_sign/lib/read_sign
+[1.605s] 
+[1.605s] Installed /home/jblevins32/IRR_final/build/read_sign
+[1.605s] running symlink_data
+[1.605s] symbolically linking /home/jblevins32/IRR_final/build/read_sign/resource/read_sign -> /home/jblevins32/IRR_final/install/read_sign/share/ament_index/resource_index/packages
+[1.605s] symbolically linking /home/jblevins32/IRR_final/build/read_sign/package.xml -> /home/jblevins32/IRR_final/install/read_sign/share/read_sign
+[1.643s] Invoked command in '/home/jblevins32/IRR_final/build/read_sign' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/jblevins32/IRR_final/build/read_sign/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/jblevins32/IRR_final/build/read_sign/build --no-deps symlink_data --force

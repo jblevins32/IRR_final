@@ -1,0 +1,39 @@
+[0.019s] Invoking command in '/home/jblevins32/IRR_final/build/control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jblevins32/IRR_final/install/read_sign:/home/jblevins32/IRR_final/install/print_fixed_odometry:/opt/ros/humble DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jblevins32/IRR_final/build/control -- -j28 -l28
+[0.229s] [35m[1mConsolidate compiler generated dependencies of target get_control[0m
+[0.229s] [ 50%] [32mBuilding CXX object CMakeFiles/get_control.dir/src/get_control.cpp.o[0m
+[2.059s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:77:42:[m[K [01;31m[Kerror: [m[K‘[01m[Krecent_odom[m[K’ was not declared in this scope
+[2.059s]    77 |     double current_yaw = quaternionToYaw([01;31m[Krecent_odom[m[K.pose.pose.orientation);
+[2.059s]       |                                          [01;31m[K^~~~~~~~~~~[m[K
+[2.271s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:[m[K In member function ‘[01m[Kvoid control::scan_callback(const LaserScan&)[m[K’:
+[2.272s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:87:9:[m[K [01;31m[Kerror: [m[K‘[01m[Krecent_scan[m[K’ was not declared in this scope
+[2.272s]    87 |         [01;31m[Krecent_scan[m[K = laser_msg;
+[2.272s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[2.277s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:[m[K In member function ‘[01m[Kvoid control::odom_callback(const Odometry&)[m[K’:
+[2.277s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:95:9:[m[K [01;31m[Kerror: [m[K‘[01m[Krecent_odom[m[K’ was not declared in this scope
+[2.277s]    95 |         [01;31m[Krecent_odom[m[K = odom_msg;
+[2.277s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[2.282s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:[m[K In member function ‘[01m[Kvoid control::sign_callback(const Int32&)[m[K’:
+[2.282s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:103:9:[m[K [01;31m[Kerror: [m[K‘[01m[Krecent_sign[m[K’ was not declared in this scope; did you mean ‘[01m[Kdetected_sign[m[K’?
+[2.282s]   103 |         [01;31m[Krecent_sign[m[K = detected_sign;
+[2.282s]       |         [01;31m[K^~~~~~~~~~~[m[K
+[2.282s]       |         [32m[Kdetected_sign[m[K
+[2.287s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:[m[K In member function ‘[01m[Kvoid control::timer_callback()[m[K’:
+[2.288s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:114:33:[m[K [01;31m[Kerror: [m[K‘[01m[Krecent_odom[m[K’ was not declared in this scope
+[2.288s]   114 |           auto current_dist_x = [01;31m[Krecent_odom[m[K.pose.pose.position.x;
+[2.288s]       |                                 [01;31m[K^~~~~~~~~~~[m[K
+[2.291s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:117:31:[m[K [01;31m[Kerror: [m[K‘[01m[Krecent_scan[m[K’ was not declared in this scope; did you mean ‘[01m[Kcurrent_scan[m[K’?
+[2.291s]   117 |           auto current_scan = [01;31m[Krecent_scan[m[K.ranges;
+[2.291s]       |                               [01;31m[K^~~~~~~~~~~[m[K
+[2.291s]       |                               [32m[Kcurrent_scan[m[K
+[2.297s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:[m[K In member function ‘[01m[Kvoid control::DoSignAction()[m[K’:
+[2.297s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:160:11:[m[K [01;31m[Kerror: [m[K‘[01m[Krecent_sign[m[K’ was not declared in this scope
+[2.297s]   160 |       if ([01;31m[Krecent_sign[m[K.data == 0)
+[2.297s]       |           [01;31m[K^~~~~~~~~~~[m[K
+[2.303s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:[m[K In member function ‘[01m[Kvoid control::translate(double)[m[K’:
+[2.303s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:220:26:[m[K [01;31m[Kerror: [m[K‘[01m[Krecent_odom[m[K’ was not declared in this scope
+[2.303s]   220 |       float dist_error = [01;31m[Krecent_odom[m[K.pose.pose.position.x - desired_x;
+[2.303s]       |                          [01;31m[K^~~~~~~~~~~[m[K
+[5.118s] gmake[2]: *** [CMakeFiles/get_control.dir/build.make:76: CMakeFiles/get_control.dir/src/get_control.cpp.o] Error 1
+[5.118s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/get_control.dir/all] Error 2
+[5.118s] gmake: *** [Makefile:146: all] Error 2
+[5.120s] Invoked command in '/home/jblevins32/IRR_final/build/control' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jblevins32/IRR_final/install/read_sign:/home/jblevins32/IRR_final/install/print_fixed_odometry:/opt/ros/humble DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jblevins32/IRR_final/build/control -- -j28 -l28

@@ -12,9 +12,15 @@
 #include <thread>
 #include <algorithm>
 #include <cmath>
+#include <tuple>
 
 using std::placeholders::_1;
 using namespace std::chrono_literals;
+
+using MessageTriple = std::tuple<
+    nav_msgs::msg::Odometry,
+    sensor_msgs::msg::LaserScan,
+    std_msgs::msg::Int32>;
 
 // This node gets the odom topic and controls the robot to a defined location
 class control : public rclcpp::Node
@@ -24,8 +30,9 @@ public:
     {
       RCLCPP_INFO(this->get_logger(), "Starting Control Node");
 
-      rclcpp::QoS qos = rclcpp::QoS(10).best_effort(); // Quality of Service
-
+      rclcpp::QoS qos(rclcpp::KeepLast(10));
+      qos.reliability(rclcpp::ReliabilityPolicy::Reliable);
+      
       subscription_odom = this->create_subscription<nav_msgs::msg::Odometry>(
           "/odom_fixed", qos, std::bind(&control::odom_callback, this, _1)); // _1 means the function will allow one argument
       
@@ -42,14 +49,22 @@ public:
 
 private:
 
-    // Define sensor messages
-    sensor_msgs::msg::LaserScan recent_scan;
-    nav_msgs::msg::Odometry recent_odom;
-    std_msgs::msg::Int32 recent_sign;
     bool odom_received = false;
     bool scan_received = false;
     bool sign_received = false;
     bool pause_flag = false;
+    bool twisting = false;
+    double current_yaw;
+
+    // Keep track of when turning
+    double initial_yaw;
+    bool entered_rotate = false;
+    float yaw_error;
+
+    // Define sensor messages
+    sensor_msgs::msg::LaserScan recent_scan;
+    nav_msgs::msg::Odometry recent_odom;
+    std_msgs::msg::Int32 recent_sign;
 
     // Set linear and angular speeds
     float lin_vel = 0.1;
@@ -59,14 +74,11 @@ private:
     geometry_msgs::msg::Twist twist_msg;
 
     // meters to stay from obstacles
-    float obstacle_dist = 0.3;
+    float obstacle_dist = 0.6;
 
     // Waypoint errors
     float error_threshold = 0.01;
     float error_threshold_rot = 0.05;
-
-    // Get current yaw orientation
-    double current_yaw = quaternionToYaw(recent_odom.pose.pose.orientation);
 
     // Distance between grids
     float grid_dist = 1; // meters
@@ -86,7 +98,6 @@ private:
         // RCLCPP_INFO(this->get_logger(),  "Received Odom");
 
         recent_odom = odom_msg;
-        odom_received = true;
     }
 
     // callback to capture sign detections
@@ -95,81 +106,106 @@ private:
         // RCLCPP_INFO(this->get_logger(),  "Received Sign");
 
         recent_sign = detected_sign;
-        odom_received = true;
     }
 
     void timer_callback()
       {
-        RCLCPP_INFO(this->get_logger(), "Received all");
 
-        // Get current pose from odom
-        auto current_dist_x = recent_odom.pose.pose.position.x;
-
-        // Get current scan data in front of robot from odom
-        auto current_scan = recent_scan.ranges;
-        std::vector<float> current_scan_fov;
-
-        // isolate the front 120 degrees of lidar scan
-        // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin() + 300, current_scan.end());
-        // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin(),current_scan.begin() + 60); 
-        // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin() + 190, current_scan.end());
-        // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin(),current_scan.begin() + 29); 
-
-        // isolate the front of lidar scan
-        current_scan_fov.insert(current_scan_fov.end(), current_scan.begin() + 355, current_scan.end());
-        current_scan_fov.insert(current_scan_fov.end(), current_scan.begin(),current_scan.begin() + 5); 
-
-        // Get min distance object in front of robot
-        float scan_min = *std::min_element(current_scan_fov.begin(), current_scan_fov.end());
-
-        // If an obstacle is less than some dist from the front of the robot,
-        if (scan_min <= obstacle_dist)
+        // Wait until we get the slowest topic, lidar scan
+        if (scan_received) 
         {
-          // Read sign
-          DoSignAction();
-        }
-        
-        // No obstacle ahead, translate 1 grid
-        else
-        {
-          translate(current_dist_x + grid_dist);
+          // RCLCPP_INFO(this->get_logger(), "Received all");
+
+          // Get current pose from odom
+          auto current_dist_x = recent_odom.pose.pose.position.x;
+
+          // Get current scan data in front of robot from odom
+          auto current_scan = recent_scan.ranges;
+          std::vector<float> current_scan_fov;
+
+          // isolate the front 120 degrees of lidar scan
+          // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin() + 300, current_scan.end());
+          // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin(),current_scan.begin() + 60); 
+          // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin() + 190, current_scan.end());
+          // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin(),current_scan.begin() + 29); 
+
+          // isolate the front of lidar scan
+          current_scan_fov.insert(current_scan_fov.end(), current_scan.begin() + 355, current_scan.end());
+          current_scan_fov.insert(current_scan_fov.end(), current_scan.begin(),current_scan.begin() + 5); 
+
+          // std::ostringstream oss;
+          // for (size_t i = 0; i < current_scan_fov.size(); ++i) {
+          //   oss << current_scan_fov[i];
+          //   if (i != current_scan_fov.size() - 1)
+          //     oss << ", ";
+          // }
+          // RCLCPP_INFO(this->get_logger(), "Scan: [%s]", oss.str().c_str());
+
+          // Get min distance object in front of robot
+          float scan_min = *std::min_element(current_scan_fov.begin(), current_scan_fov.end());
+          RCLCPP_INFO(this->get_logger(), "Scan_min: [%f]", scan_min);
+
+          // Get current yaw orientation
+          current_yaw = quaternionToYaw(recent_odom.pose.pose.orientation);
+
+          // If an obstacle is less than some dist from the front of the robot,
+          if (scan_min <= obstacle_dist)
+          {
+            // Read sign
+            
+            // None, rotate 90 to look for another sign
+            if (recent_sign.data == 0)
+            {
+              RCLCPP_INFO(this->get_logger(), "Found nothing");
+              if (!entered_rotate)
+              {
+                initial_yaw = current_yaw;
+              }
+              
+              rotate(initial_yaw + M_PI/2);
+            } 
+
+            // left arrow
+            else if (recent_sign.data == 1)
+            {
+              RCLCPP_INFO(this->get_logger(), "Found left arrow");
+              rotate(current_yaw + M_PI/2);
+            }
+
+            // right arrow
+            else if (recent_sign.data == 2)
+            {
+              RCLCPP_INFO(this->get_logger(), "Found right arrow");
+              rotate(current_yaw - M_PI/2);
+            }
+
+            // Stop and turn around
+            else if ((recent_sign.data == 3) | (recent_sign.data == 4))
+            {
+              RCLCPP_INFO(this->get_logger(), "Found reverse or stop");
+              rotate(current_yaw - M_PI);
+            }
+
+            // Goal
+            else if (recent_sign.data == 5)
+            {
+              RCLCPP_INFO(this->get_logger(), "Found goal!");
+              stop();
+            }
+          }
+          }
+          
+          // No obstacle ahead, translate 1 grid
+          else
+          {
+            translate(current_dist_x + grid_dist);
+          }
         }
       }
 
     // Do the action requested by the sign
     void DoSignAction()
     {
-      // None, rotate 90 to look for another sign
-      if (recent_sign.data == 0)
-      {
-        rotate(current_yaw + M_PI/2);
-      } 
-
-      // left arrow
-      else if (recent_sign.data == 1)
-      {
-        rotate(current_yaw + M_PI/2);
-      }
-
-      // right arrow
-      else if (recent_sign.data == 2)
-      {
-        rotate(current_yaw - M_PI/2);
-      }
-
-      // Stop and turn around
-      else if ((recent_sign.data == 3) | (recent_sign.data == 4))
-      {
-        rotate(current_yaw - M_PI);
-      }
-
-      // Goal
-      else if (recent_sign.data == 5)
-      {
-        RCLCPP_INFO(this->get_logger(), "Found goal!");
-        stop();
-      }
-    }
 
     // Call for rotate commands until some desired yaw
     void rotate(double desired_yaw)
@@ -177,20 +213,40 @@ private:
 
       // Stop movement before rotation
       twist_msg.linear.x = 0;
-      float yaw_error = getYawError(current_yaw, desired_yaw);
+      yaw_error = getYawError(current_yaw, desired_yaw);
+      RCLCPP_INFO(this->get_logger(), "Current Yaw %f, desired Yaw %f", current_yaw, desired_yaw);
+      // const auto &pos = recent_odom.pose.pose.position;
+      // const auto &ori = recent_odom.pose.pose.orientation;
+      // RCLCPP_INFO(this->get_logger(),
+      //   "Odom Position: [x=%.2f, y=%.2f, z=%.2f]", pos.x, pos.y, pos.z);
+
+      // RCLCPP_INFO(this->get_logger(),
+      //   "Odom Orientation (quaternion): [x=%.2f, y=%.2f, z=%.2f, w=%.2f]", ori.x, ori.y, ori.z, ori.w);
 
       // Rotate this direction until we meet the threshold
-      while (yaw_error > error_threshold_rot)
+      if (yaw_error > error_threshold_rot)
       {
+        RCLCPP_INFO(this->get_logger(), "Rotating Clockwise");
         twist_msg.angular.z = ang_vel;
         publish_cmd(twist_msg);
       }
+      else
+      {
+        RCLCPP_INFO(this->get_logger(), "Done Rotating");
+        stop();
+      }
 
       // Rotate this direction until we meet the threshold
-      while (-yaw_error > error_threshold_rot)
+      if (-yaw_error > error_threshold_rot)
       {
+        RCLCPP_INFO(this->get_logger(), "Rotating CounterClockwise");
         twist_msg.angular.z = -ang_vel;
         publish_cmd(twist_msg);
+      }
+      else
+      {
+        RCLCPP_INFO(this->get_logger(), "Done Rotating");
+        stop();
       }
     }
 

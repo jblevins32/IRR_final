@@ -1,0 +1,15 @@
+running develop
+running egg_info
+writing read_sign.egg-info/PKG-INFO
+writing dependency_links to read_sign.egg-info/dependency_links.txt
+writing entry points to read_sign.egg-info/entry_points.txt
+writing requirements to read_sign.egg-info/requires.txt
+writing top-level names to read_sign.egg-info/top_level.txt
+reading manifest file 'read_sign.egg-info/SOURCES.txt'
+writing manifest file 'read_sign.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages/read-sign.egg-link (link to .)
+Installing read_sign_pubsub script to /home/jblevins32/IRR_final/install/read_sign/lib/read_sign
+
+Installed /home/jblevins32/IRR_final/build/read_sign
+running symlink_data

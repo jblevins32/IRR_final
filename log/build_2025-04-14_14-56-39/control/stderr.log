@@ -1,0 +1,20 @@
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:[m[K In member function ‘[01m[Kvoid control::DoSignAction()[m[K’:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:164:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_yaw[m[K’ was not declared in this scope
+  164 |         rotate([01;31m[Kcurrent_yaw[m[K + M_PI/2);
+      |                [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:171:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_yaw[m[K’ was not declared in this scope
+  171 |         rotate([01;31m[Kcurrent_yaw[m[K + M_PI/2);
+      |                [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:178:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_yaw[m[K’ was not declared in this scope
+  178 |         rotate([01;31m[Kcurrent_yaw[m[K - M_PI/2);
+      |                [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:185:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_yaw[m[K’ was not declared in this scope
+  185 |         rotate([01;31m[Kcurrent_yaw[m[K - M_PI);
+      |                [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:[m[K In member function ‘[01m[Kvoid control::rotate(double)[m[K’:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:204:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_yaw[m[K’ was not declared in this scope
+  204 |       float yaw_error = getYawError([01;31m[Kcurrent_yaw[m[K, desired_yaw);
+      |                                     [01;31m[K^~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/get_control.dir/build.make:76: CMakeFiles/get_control.dir/src/get_control.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/get_control.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2

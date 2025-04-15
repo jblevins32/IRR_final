@@ -1,0 +1,16 @@
+/home/jblevins32/IRR_final/install/control/lib/control/get_control
+/home/jblevins32/IRR_final/install/control/share/ament_index/resource_index/package_run_dependencies/control
+/home/jblevins32/IRR_final/install/control/share/ament_index/resource_index/parent_prefix_path/control
+/home/jblevins32/IRR_final/install/control/share/control/environment/ament_prefix_path.sh
+/home/jblevins32/IRR_final/install/control/share/control/environment/ament_prefix_path.dsv
+/home/jblevins32/IRR_final/install/control/share/control/environment/path.sh
+/home/jblevins32/IRR_final/install/control/share/control/environment/path.dsv
+/home/jblevins32/IRR_final/install/control/share/control/local_setup.bash
+/home/jblevins32/IRR_final/install/control/share/control/local_setup.sh
+/home/jblevins32/IRR_final/install/control/share/control/local_setup.zsh
+/home/jblevins32/IRR_final/install/control/share/control/local_setup.dsv
+/home/jblevins32/IRR_final/install/control/share/control/package.dsv
+/home/jblevins32/IRR_final/install/control/share/ament_index/resource_index/packages/control
+/home/jblevins32/IRR_final/install/control/share/control/cmake/controlConfig.cmake
+/home/jblevins32/IRR_final/install/control/share/control/cmake/controlConfig-version.cmake
+/home/jblevins32/IRR_final/install/control/share/control/package.xml

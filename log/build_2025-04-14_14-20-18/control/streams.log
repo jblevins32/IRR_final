@@ -1,0 +1,26 @@
+[0.013s] Invoking command in '/home/jblevins32/IRR_final/build/control': CMAKE_PREFIX_PATH=/opt/ros/humble DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jblevins32/IRR_final/build/control -- -j28 -l28
+[0.213s] [35m[1mConsolidate compiler generated dependencies of target get_control[0m
+[0.213s] [ 50%] [32mBuilding CXX object CMakeFiles/get_control.dir/src/get_control.cpp.o[0m
+[11.055s] [100%] [32m[1mLinking CXX executable get_control[0m
+[11.695s] [100%] Built target get_control
+[11.703s] Invoked command in '/home/jblevins32/IRR_final/build/control' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jblevins32/IRR_final/build/control -- -j28 -l28
+[11.710s] Invoking command in '/home/jblevins32/IRR_final/build/control': CMAKE_PREFIX_PATH=/opt/ros/humble DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/jblevins32/IRR_final/build/control
+[11.718s] -- Install configuration: "Debug"
+[11.718s] -- Execute custom install script
+[11.718s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/lib/control/get_control
+[11.718s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/ament_index/resource_index/package_run_dependencies/control
+[11.718s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/ament_index/resource_index/parent_prefix_path/control
+[11.718s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/environment/ament_prefix_path.sh
+[11.719s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/environment/ament_prefix_path.dsv
+[11.719s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/environment/path.sh
+[11.719s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/environment/path.dsv
+[11.719s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/local_setup.bash
+[11.719s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/local_setup.sh
+[11.719s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/local_setup.zsh
+[11.719s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/local_setup.dsv
+[11.719s] -- Symlinking: /home/jblevins32/IRR_final/install/control/share/control/package.dsv
+[11.727s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/ament_index/resource_index/packages/control
+[11.727s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/cmake/controlConfig.cmake
+[11.727s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/cmake/controlConfig-version.cmake
+[11.727s] -- Up-to-date symlink: /home/jblevins32/IRR_final/install/control/share/control/package.xml
+[11.730s] Invoked command in '/home/jblevins32/IRR_final/build/control' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/jblevins32/IRR_final/build/control

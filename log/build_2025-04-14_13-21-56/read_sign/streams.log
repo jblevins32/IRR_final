@@ -1,0 +1,33 @@
+[0.980s] Invoking command in '/home/jblevins32/IRR_final/build/read_sign': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/jblevins32/IRR_final/build/read_sign/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/jblevins32/IRR_final/build/read_sign/build
+[1.261s] running develop
+[1.480s] Removing /home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages/read-sign.egg-link (link to .)
+[1.509s] Invoked command in '/home/jblevins32/IRR_final/build/read_sign' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/jblevins32/IRR_final/build/read_sign/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/jblevins32/IRR_final/build/read_sign/build
+[1.510s] Invoking command in '/home/jblevins32/IRR_final/src/read_sign': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/jblevins32/IRR_final/build/read_sign/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/read_sign build --build-base /home/jblevins32/IRR_final/build/read_sign/build install --record /home/jblevins32/IRR_final/build/read_sign/install.log --single-version-externally-managed install_data --force
+[1.792s] running egg_info
+[1.792s] writing ../../build/read_sign/read_sign.egg-info/PKG-INFO
+[1.792s] writing dependency_links to ../../build/read_sign/read_sign.egg-info/dependency_links.txt
+[1.793s] writing entry points to ../../build/read_sign/read_sign.egg-info/entry_points.txt
+[1.793s] writing requirements to ../../build/read_sign/read_sign.egg-info/requires.txt
+[1.793s] writing top-level names to ../../build/read_sign/read_sign.egg-info/top_level.txt
+[1.795s] reading manifest file '../../build/read_sign/read_sign.egg-info/SOURCES.txt'
+[1.795s] writing manifest file '../../build/read_sign/read_sign.egg-info/SOURCES.txt'
+[1.795s] running build
+[1.795s] running build_py
+[1.796s] running install
+[1.796s] running install_lib
+[1.797s] creating /home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages/read_sign
+[1.797s] copying /home/jblevins32/IRR_final/build/read_sign/build/lib/read_sign/learn_signs.py -> /home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages/read_sign
+[1.797s] copying /home/jblevins32/IRR_final/build/read_sign/build/lib/read_sign/read_sign.py -> /home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages/read_sign
+[1.797s] copying /home/jblevins32/IRR_final/build/read_sign/build/lib/read_sign/__init__.py -> /home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages/read_sign
+[1.798s] byte-compiling /home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages/read_sign/learn_signs.py to learn_signs.cpython-310.pyc
+[1.799s] byte-compiling /home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages/read_sign/read_sign.py to read_sign.cpython-310.pyc
+[1.800s] byte-compiling /home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages/read_sign/__init__.py to __init__.cpython-310.pyc
+[1.800s] running install_data
+[1.800s] copying resource/read_sign -> /home/jblevins32/IRR_final/install/read_sign/share/ament_index/resource_index/packages
+[1.800s] copying package.xml -> /home/jblevins32/IRR_final/install/read_sign/share/read_sign
+[1.800s] running install_egg_info
+[1.802s] Copying ../../build/read_sign/read_sign.egg-info to /home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages/read_sign-0.0.0-py3.10.egg-info
+[1.803s] running install_scripts
+[1.833s] Installing read_sign_pubsub script to /home/jblevins32/IRR_final/install/read_sign/lib/read_sign
+[1.833s] writing list of installed files to '/home/jblevins32/IRR_final/build/read_sign/install.log'
+[1.866s] Invoked command in '/home/jblevins32/IRR_final/src/read_sign' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/jblevins32/IRR_final/build/read_sign/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jblevins32/IRR_final/install/read_sign/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/read_sign build --build-base /home/jblevins32/IRR_final/build/read_sign/build install --record /home/jblevins32/IRR_final/build/read_sign/install.log --single-version-externally-managed install_data --force

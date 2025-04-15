@@ -1,2 +1,1 @@
-source;share/control/environment/ament_prefix_path.sh
-source;share/control/environment/path.sh
+/home/jblevins32/IRR_final/build/control/ament_cmake_environment_hooks/local_setup.dsv

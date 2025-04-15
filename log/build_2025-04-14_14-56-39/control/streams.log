@@ -1,0 +1,24 @@
+[0.014s] Invoking command in '/home/jblevins32/IRR_final/build/control': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jblevins32/IRR_final/install/read_sign:/home/jblevins32/IRR_final/install/print_fixed_odometry:/opt/ros/humble DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jblevins32/IRR_final/build/control -- -j28 -l28
+[0.227s] [35m[1mConsolidate compiler generated dependencies of target get_control[0m
+[0.228s] [ 50%] [32mBuilding CXX object CMakeFiles/get_control.dir/src/get_control.cpp.o[0m
+[2.089s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:[m[K In member function ‘[01m[Kvoid control::DoSignAction()[m[K’:
+[2.089s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:164:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_yaw[m[K’ was not declared in this scope
+[2.089s]   164 |         rotate([01;31m[Kcurrent_yaw[m[K + M_PI/2);
+[2.089s]       |                [01;31m[K^~~~~~~~~~~[m[K
+[2.094s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:171:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_yaw[m[K’ was not declared in this scope
+[2.094s]   171 |         rotate([01;31m[Kcurrent_yaw[m[K + M_PI/2);
+[2.094s]       |                [01;31m[K^~~~~~~~~~~[m[K
+[2.099s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:178:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_yaw[m[K’ was not declared in this scope
+[2.099s]   178 |         rotate([01;31m[Kcurrent_yaw[m[K - M_PI/2);
+[2.099s]       |                [01;31m[K^~~~~~~~~~~[m[K
+[2.104s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:185:16:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_yaw[m[K’ was not declared in this scope
+[2.104s]   185 |         rotate([01;31m[Kcurrent_yaw[m[K - M_PI);
+[2.104s]       |                [01;31m[K^~~~~~~~~~~[m[K
+[2.110s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:[m[K In member function ‘[01m[Kvoid control::rotate(double)[m[K’:
+[2.110s] [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:204:37:[m[K [01;31m[Kerror: [m[K‘[01m[Kcurrent_yaw[m[K’ was not declared in this scope
+[2.110s]   204 |       float yaw_error = getYawError([01;31m[Kcurrent_yaw[m[K, desired_yaw);
+[2.110s]       |                                     [01;31m[K^~~~~~~~~~~[m[K
+[4.867s] gmake[2]: *** [CMakeFiles/get_control.dir/build.make:76: CMakeFiles/get_control.dir/src/get_control.cpp.o] Error 1
+[4.867s] gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/get_control.dir/all] Error 2
+[4.867s] gmake: *** [Makefile:146: all] Error 2
+[4.870s] Invoked command in '/home/jblevins32/IRR_final/build/control' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/jblevins32/IRR_final/install/read_sign:/home/jblevins32/IRR_final/install/print_fixed_odometry:/opt/ros/humble DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/jblevins32/IRR_final/build/control -- -j28 -l28

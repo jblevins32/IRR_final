@@ -1,0 +1,17 @@
+[1.114s] Invoking command in '/home/jblevins32/IRR_final/build/print_fixed_odometry': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/jblevins32/IRR_final/build/print_fixed_odometry/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jblevins32/IRR_final/install/print_fixed_odometry/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/jblevins32/IRR_final/build/print_fixed_odometry/build --no-deps symlink_data
+[1.451s] running develop
+[1.682s] running egg_info
+[1.682s] writing print_fixed_odometry.egg-info/PKG-INFO
+[1.682s] writing dependency_links to print_fixed_odometry.egg-info/dependency_links.txt
+[1.683s] writing entry points to print_fixed_odometry.egg-info/entry_points.txt
+[1.683s] writing requirements to print_fixed_odometry.egg-info/requires.txt
+[1.683s] writing top-level names to print_fixed_odometry.egg-info/top_level.txt
+[1.684s] reading manifest file 'print_fixed_odometry.egg-info/SOURCES.txt'
+[1.685s] writing manifest file 'print_fixed_odometry.egg-info/SOURCES.txt'
+[1.686s] running build_ext
+[1.686s] Creating /home/jblevins32/IRR_final/install/print_fixed_odometry/lib/python3.10/site-packages/print-fixed-odometry.egg-link (link to .)
+[1.687s] Installing zero_odom script to /home/jblevins32/IRR_final/install/print_fixed_odometry/lib/print_fixed_odometry
+[1.688s] 
+[1.688s] Installed /home/jblevins32/IRR_final/build/print_fixed_odometry
+[1.688s] running symlink_data
+[1.715s] Invoked command in '/home/jblevins32/IRR_final/build/print_fixed_odometry' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/jblevins32/IRR_final/build/print_fixed_odometry/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jblevins32/IRR_final/install/print_fixed_odometry/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/jblevins32/IRR_final/build/print_fixed_odometry/build --no-deps symlink_data

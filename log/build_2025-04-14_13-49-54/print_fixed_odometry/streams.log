@@ -1,0 +1,21 @@
+[2.406s] Invoking command in '/home/jblevins32/IRR_final/src/print_fixed_odometry': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/jblevins32/IRR_final/build/print_fixed_odometry/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jblevins32/IRR_final/install/print_fixed_odometry/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/print_fixed_odometry build --build-base /home/jblevins32/IRR_final/build/print_fixed_odometry/build install --record /home/jblevins32/IRR_final/build/print_fixed_odometry/install.log --single-version-externally-managed install_data
+[3.111s] running egg_info
+[3.113s] writing ../../build/print_fixed_odometry/print_fixed_odometry.egg-info/PKG-INFO
+[3.114s] writing dependency_links to ../../build/print_fixed_odometry/print_fixed_odometry.egg-info/dependency_links.txt
+[3.114s] writing entry points to ../../build/print_fixed_odometry/print_fixed_odometry.egg-info/entry_points.txt
+[3.114s] writing requirements to ../../build/print_fixed_odometry/print_fixed_odometry.egg-info/requires.txt
+[3.114s] writing top-level names to ../../build/print_fixed_odometry/print_fixed_odometry.egg-info/top_level.txt
+[3.120s] reading manifest file '../../build/print_fixed_odometry/print_fixed_odometry.egg-info/SOURCES.txt'
+[3.122s] writing manifest file '../../build/print_fixed_odometry/print_fixed_odometry.egg-info/SOURCES.txt'
+[3.122s] running build
+[3.122s] running build_py
+[3.123s] running install
+[3.124s] running install_lib
+[3.127s] running install_data
+[3.127s] running install_egg_info
+[3.134s] removing '/home/jblevins32/IRR_final/install/print_fixed_odometry/lib/python3.10/site-packages/print_fixed_odometry-0.0.0-py3.10.egg-info' (and everything under it)
+[3.136s] Copying ../../build/print_fixed_odometry/print_fixed_odometry.egg-info to /home/jblevins32/IRR_final/install/print_fixed_odometry/lib/python3.10/site-packages/print_fixed_odometry-0.0.0-py3.10.egg-info
+[3.136s] running install_scripts
+[3.190s] Installing zero_odom script to /home/jblevins32/IRR_final/install/print_fixed_odometry/lib/print_fixed_odometry
+[3.190s] writing list of installed files to '/home/jblevins32/IRR_final/build/print_fixed_odometry/install.log'
+[3.241s] Invoked command in '/home/jblevins32/IRR_final/src/print_fixed_odometry' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/jblevins32/IRR_final/build/print_fixed_odometry/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/jblevins32/IRR_final/install/print_fixed_odometry/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/print_fixed_odometry build --build-base /home/jblevins32/IRR_final/build/print_fixed_odometry/build install --record /home/jblevins32/IRR_final/build/print_fixed_odometry/install.log --single-version-externally-managed install_data
