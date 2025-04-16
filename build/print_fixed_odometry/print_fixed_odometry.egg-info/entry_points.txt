@@ -1,3 +1,0 @@
-[console_scripts]
-zero_odom = print_fixed_odometry.zero:main
-
