@@ -75,7 +75,7 @@ private:
 
     // Set linear and angular speeds
     float lin_vel = 0.1;
-    float ang_vel = 0.35;
+    float ang_vel = 0.25;
 
     // Instantiate a Twist for control command and defining desired distance
     geometry_msgs::msg::Twist twist_msg;
@@ -122,28 +122,13 @@ private:
         if (scan_received) 
         {
 
-          // Get current pose from odom
-          auto current_dist_x = recent_odom.pose.pose.position.x;
-          auto current_dist_y = recent_odom.pose.pose.position.y;
-
           // Get current scan data in front of robot from odom
           auto current_scan = recent_scan.ranges;
           std::vector<float> current_scan_fov;
           // RCLCPP_INFO(this->get_logger(), "Scan size %zu", current_scan.size());
 
-          // std::ostringstream oss;
-          // for (size_t i = 0; i < current_scan.size(); ++i) {
-          //   oss << current_scan[i];
-          //   if (i != current_scan.size() - 1)
-          //     oss << ", ";
-          // }
-          // RCLCPP_INFO(this->get_logger(), "Scan: [%s]", oss.str().c_str());
-
-          // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin() + 190, current_scan.end());
-          // current_scan_fov.insert(current_scan_fov.end(), current_scan.begin(),current_scan.begin() + 29); 
-
           // isolate the front of lidar scan
-          current_scan_fov.insert(current_scan_fov.end(), current_scan.begin() + 230, current_scan.end()); // + 355 for sim
+          current_scan_fov.insert(current_scan_fov.end(), current_scan.begin() + 225, current_scan.end()); // + 355 for sim
           current_scan_fov.insert(current_scan_fov.end(), current_scan.begin(),current_scan.begin() + 5); // + 5 for sim
 
           // Get min distance object in front of robot
@@ -178,7 +163,7 @@ private:
               stop();
             }
           }
-          else if (translate_is_read)
+          else
           {
             // translate(goal_dist);
             if (scan_min > obstacle_dist)
@@ -190,7 +175,7 @@ private:
             {
               RCLCPP_INFO(this->get_logger(), "Done Translating");
               stop();
-              translate_is_read = false;
+              // translate_is_read = false;
             }
           }
 
@@ -198,6 +183,12 @@ private:
           if (scan_min <= obstacle_dist)
           {
             // Read sign
+            if (recent_sign.data == 5)
+            {
+              RCLCPP_INFO(this->get_logger(), "Found goal!");
+              sign_is_read = true;
+              stop();
+            }
 
             // None, rotate 90 to look for another sign
             if (sign_is_read == false)
@@ -235,41 +226,10 @@ private:
                 RCLCPP_INFO(this->get_logger(), "Found goal!");
                 sign_to_rotate = 5;
               }
-              
-              // Define variables needed for all rotation cases
+
               initial_yaw = current_yaw;
+              // RCLCPP_INFO(this->get_logger(), "Initial yaw %f", initial_yaw);
               sign_is_read = true;
-            }
-          }
-          
-          // No obstacle ahead, translate 1 grid
-          else if (translate_is_read == false)
-          {
-            RCLCPP_INFO(this->get_logger(), "Translating");
-
-            // Define variables needed for all translation cases
-            translate_is_read = true;
-
-            // bot orientation is along starting x axis
-            if (((current_yaw > -0.785) & (current_yaw < 0.785)) | (current_yaw > 5.495) | (current_yaw < -5.495))
-            {
-              RCLCPP_INFO(this->get_logger(), "Moving in +x");
-              goal_dist = current_dist_x + grid_dist;
-            }
-            else if (((current_yaw > 0.785) & (current_yaw < 2.355)) | ((current_yaw < -0.785) & (current_yaw > -2.355)))
-            {
-              RCLCPP_INFO(this->get_logger(), "Moving in +y");
-              goal_dist = current_dist_y + grid_dist;
-            }
-            else if (((current_yaw > 2.355) & (current_yaw < 3.925)) | ((current_yaw < -2.355) & (current_yaw > -3.925)))
-            {
-              RCLCPP_INFO(this->get_logger(), "Moving in -x");
-              goal_dist = current_dist_x - grid_dist;
-            }
-            else if (((current_yaw > 3.925) & (current_yaw < 5.495)) | ((current_yaw < -3.925) & (current_yaw > -5.495)))
-            {
-              RCLCPP_INFO(this->get_logger(), "Moving in -y");
-              goal_dist = current_dist_y - grid_dist;
             }
           }
         }
@@ -306,29 +266,6 @@ private:
         stop();
         sign_is_read = false; // Stop going into rotation 
         sign_to_rotate = -1; // Reset read sign
-      }
-    }
-
-    // Call for translate commands until some desired position
-    void translate(double desired_x)
-    {
-
-      // Stop movement before translation
-      twist_msg.angular.z = 0;
-      float dist_error = recent_odom.pose.pose.position.x - desired_x;
-      // RCLCPP_INFO(this->get_logger(), "Current pos x,y,theta %f, %f, %f ... desired pos x %f", recent_odom.pose.pose.position.x, recent_odom.pose.pose.position.y, current_yaw, desired_x);
-
-      // translate in x until we meet the threshold
-      if (std::abs(dist_error) > error_threshold)
-      {
-        twist_msg.linear.x = lin_vel;
-        publish_cmd(twist_msg);
-      }
-      else
-      {
-        RCLCPP_INFO(this->get_logger(), "Done Translating");
-        stop();
-        translate_is_read = false;
       }
     }
 

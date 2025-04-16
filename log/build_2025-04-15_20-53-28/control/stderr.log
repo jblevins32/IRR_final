@@ -1,0 +1,42 @@
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:57:16:[m[K [01;31m[Kerror: [m[K‘[01m[KInt32[m[K’ was not declared in this scope; did you mean ‘[01m[Kstd_msgs::msg::Int32[m[K’?
+   57 |     std::queue<[01;31m[KInt32[m[K> sign_queue;
+      |                [01;31m[K^~~~~[m[K
+      |                [32m[Kstd_msgs::msg::Int32[m[K
+In file included from [01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/int32.hpp:7[m[K,
+                 from [01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:5[m[K:
+[01m[K/opt/ros/humble/include/std_msgs/std_msgs/msg/detail/int32__struct.hpp:122:7:[m[K [01;36m[Knote: [m[K‘[01m[Kstd_msgs::msg::Int32[m[K’ declared here
+  122 | using [01;36m[KInt32[m[K =
+      |       [01;36m[K^~~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:57:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   57 |     std::queue<Int32[01;31m[K>[m[K sign_queue;
+      |                     [01;31m[K^[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:57:21:[m[K [01;31m[Kerror: [m[Ktemplate argument 2 is invalid
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:[m[K In member function ‘[01m[Kvoid control::sign_callback(const Int32&)[m[K’:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:120:20:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kpush[m[K’ in ‘[01m[K((control*)this)->control::sign_queue[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+  120 |         sign_queue.[01;31m[Kpush[m[K(recent_sign);
+      |                    [01;31m[K^~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:124:24:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Ksize[m[K’ in ‘[01m[K((control*)this)->control::sign_queue[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+  124 |         if (sign_queue.[01;31m[Ksize[m[K() >= max_queue_size)
+      |                        [01;31m[K^~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:126:22:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kpop[m[K’ in ‘[01m[K((control*)this)->control::sign_queue[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+  126 |           sign_queue.[01;31m[Kpop[m[K();
+      |                      [01;31m[K^~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:[m[K In member function ‘[01m[Kvoid control::timer_callback()[m[K’:
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:217:34:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kempty[m[K’ in ‘[01m[K((control*)this)->control::sign_queue[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+  217 |               while (!sign_queue.[01;31m[Kempty[m[K()) {
+      |                                  [01;31m[K^~~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:218:35:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kfront[m[K’ in ‘[01m[K((control*)this)->control::sign_queue[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+  218 |                 sum += sign_queue.[01;31m[Kfront[m[K().data;
+      |                                   [01;31m[K^~~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:219:28:[m[K [01;31m[Kerror: [m[Krequest for member ‘[01m[Kpop[m[K’ in ‘[01m[K((control*)this)->control::sign_queue[m[K’, which is of non-class type ‘[01m[Kint[m[K’
+  219 |                 sign_queue.[01;31m[Kpop[m[K();
+      |                            [01;31m[K^~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:138:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kcurrent_dist_x[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  138 |           auto [01;35m[Kcurrent_dist_x[m[K = recent_odom.pose.pose.position.x;
+      |                [01;35m[K^~~~~~~~~~~~~~[m[K
+[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:139:16:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kcurrent_dist_y[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  139 |           auto [01;35m[Kcurrent_dist_y[m[K = recent_odom.pose.pose.position.y;
+      |                [01;35m[K^~~~~~~~~~~~~~[m[K
+gmake[2]: *** [CMakeFiles/get_control.dir/build.make:76: CMakeFiles/get_control.dir/src/get_control.cpp.o] Error 1
+gmake[1]: *** [CMakeFiles/Makefile2:137: CMakeFiles/get_control.dir/all] Error 2
+gmake: *** [Makefile:146: all] Error 2
