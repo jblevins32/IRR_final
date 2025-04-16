@@ -1,4 +1,0 @@
-[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:[m[K In member function ‘[01m[Kvoid control::timer_callback()[m[K’:
-[01m[K/home/jblevins32/IRR_final/src/control/src/get_control.cpp:103:17:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kobstacle_too_close[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
-  103 |           float [01;35m[Kobstacle_too_close[m[K = 0.1; // back up if too close
-      |                 [01;35m[K^~~~~~~~~~~~~~~~~~[m[K
