@@ -60,6 +60,7 @@ private:
     bool translate_is_read = false;
     float goal_dist;
     int sign_to_rotate = -1;
+    int found_goal_count = 0;
 
     float scan_min;
 
@@ -85,7 +86,7 @@ private:
 
     // Waypoint errors
     float error_threshold = 0.01;
-    float error_threshold_rot = 0.01;
+    float error_threshold_rot = 0.045;
 
     // Distance between grids
     float grid_dist = 0.8; // meters 0.3 for sim
@@ -117,6 +118,15 @@ private:
 
     void timer_callback()
       {
+        // If we read stop a certain amount of times, we are at the goal
+        if (found_goal_count == 50)
+        {
+          while(1)
+          {
+            RCLCPP_INFO(this->get_logger(), "Done.");
+            rclcpp::shutdown();
+          }
+        }
 
         // Wait until we get the slowest topic, lidar scan
         if (scan_received) 
@@ -159,7 +169,6 @@ private:
             }
             else if (sign_to_rotate == 5)
             {
-              RCLCPP_INFO(this->get_logger(), "FOUND GOAL");
               stop();
             }
           }
@@ -173,7 +182,7 @@ private:
             }
             else
             {
-              RCLCPP_INFO(this->get_logger(), "Done Translating");
+              // RCLCPP_INFO(this->get_logger(), "Done Translating");
               stop();
               // translate_is_read = false;
             }
@@ -186,6 +195,7 @@ private:
             if (recent_sign.data == 5)
             {
               RCLCPP_INFO(this->get_logger(), "Found goal!");
+              found_goal_count += 1;
               sign_is_read = true;
               stop();
             }
@@ -224,6 +234,7 @@ private:
               else if (recent_sign.data == 5)
               {
                 RCLCPP_INFO(this->get_logger(), "Found goal!");
+                found_goal_count += 1;
                 sign_to_rotate = 5;
               }
 

@@ -27,6 +27,9 @@ class ReadSign(Node):
 
         self.model = joblib.load('./src/read_sign/saved_model_best.pkl')
 
+        self.video_writer = None
+
+
     def _image_callback(self, img):
 
         # Convert compressed image to numpy array
@@ -34,6 +37,14 @@ class ReadSign(Node):
         img = cv2.imdecode(img, cv2.IMREAD_COLOR)
 
         # Show the image
+        # if self.video_writer is None:
+        #     height, width, _ = img.shape
+        #     fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # use mp4v for mp4
+        #     self.video_writer = cv2.VideoWriter('output.mp4', fourcc, 30.0, (width, height))
+        #     if not self.video_writer.isOpened():
+        #         print("Failed to open video writer!")
+        #         return
+            
         cv2.imshow('Original',img)
         key = cv2.waitKey(1) & 0xFF
 
@@ -58,6 +69,8 @@ def main(args=None):
     rclpy.spin(read_sign)
 
     read_sign.destroy_node()
+
+    # read_sign.video_writer.release()
 
     rclpy.shutdown()
 
